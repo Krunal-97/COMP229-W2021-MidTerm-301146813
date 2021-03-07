@@ -1,3 +1,10 @@
+<!-- File name: details.ejs
+Name: Krunal Parmar
+Student Id: 301146813
+Date: 02/03/2021
+COMP229-MidTerm-301146813
+Copyright © 2021 Centennial College. All rights reserved. -->
+
 <% include ../partials/header.ejs %>
 
     <!-- MAIN CONTENT -->
@@ -7,6 +14,7 @@
           <h1><%= title %></h1>
             <form class="form" method="post">
               <div class="form-group">
+                <!-- title is injected by ejs -->
                 <label for="NameTextField"><%= title %></label>
                 <input type="text" class="form-control" id="NameTextField"
                 placeholder="Book Name" name="title" value= "<%= books.Title %>" required>
