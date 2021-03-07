@@ -1,3 +1,10 @@
+// File name: index.js
+// Name: Krunal Parmar
+// Student Id: 301146813
+// Date: 02/03/2021
+// COMP229-MidTerm-301146813
+// Copyright © 2021 Centennial College. All rights reserved.
+
 // modules required for routing
 let express = require('express');
 let router = express.Router();

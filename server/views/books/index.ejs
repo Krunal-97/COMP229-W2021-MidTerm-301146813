@@ -1,3 +1,10 @@
+<!-- File name: index.ejs
+Name: Krunal Parmar
+Student Id: 301146813
+Date: 02/03/2021
+COMP229-MidTerm-301146813
+Copyright © 2021 Centennial College. All rights reserved. -->
+
 <% include ../partials/header.ejs %>
 
     <!-- MAIN CONTENT -->
@@ -5,9 +12,7 @@
       <div class="row">
         <div class="col-md-offset-1 col-md-10">
           <h3>Favourite Books List </h3>
-          <!-- ------------------------ -->
-          <!-- FIX THE ADD BUTTON BELOW -->
-          <!-- ------------------------ -->
+          <!-- add button is fixed -->
           <a href="/books/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add a book</a>
           <br>
           <div class="table-responsive">
@@ -32,14 +37,13 @@
                   <td class="text-center"><%= books[count].Genre %></td>
 
                   <td class="text-center">
-                    <!-- ------------------------ -->
-                    <!-- ADD the EDIT BUTTON HERE -->
-                    <!-- ------------------------ -->
+                    <!-- edit button is added  -->
                     <a href="/books/<%= books[count]._id %>" class="btn btn-primary btn-sm">
                     <i class="fas fa-pencil-alt"></i> Edit</a>
                   </td>
 
                   <td class="text-center">
+                    <!-- delete button is added -->
                     <a href="/books/delete/<%= books[count]._id %>" class="btn btn-primary btn-sm">
                     <i class="fas fa-pencil-alt"></i> Delete</a>
                   </td>

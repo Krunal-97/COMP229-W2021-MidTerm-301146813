@@ -1,3 +1,10 @@
+// File name: books.js
+// Name: Krunal Parmar
+// Student Id: 301146813
+// Date: 02/03/2021
+// COMP229-MidTerm-301146813
+// Copyright © 2021 Centennial College. All rights reserved.
+
 // modules required for routing
 let express = require('express');
 let router = express.Router();
@@ -8,6 +15,7 @@ let book = require('../models/books');
 
 /* GET books List page. READ */
 router.get('/', (req, res, next) => {
+  
   // find all books in the books collection
   book.find( (err, books) => {
     if (err) {
@@ -28,7 +36,7 @@ router.get('/add', (req, res, next) => {
 
   res.render('books/details', {
     title: 'Add Book',
-    books: {}
+    books: {} // Passing empty object
   });
 
 });
@@ -36,6 +44,7 @@ router.get('/add', (req, res, next) => {
 // POST process the Book Details page and create a new Book - CREATE
 router.post('/add', (req, res, next) => {
 
+    // passing the values to the boook property
     let newBook = book({
     "Title": req.body.title,
     "Price": req.body.price,
@@ -60,6 +69,7 @@ router.post('/add', (req, res, next) => {
 // GET the Book Details page in order to edit an existing Book
 router.get('/:id', (req, res, next) => {
 
+  // fetching the id of the book which is going to be edited by the user
   let id = req.params.id;
   book.findById(id, (err, bookToEdit) => {
     if(err)
@@ -78,9 +88,7 @@ router.get('/:id', (req, res, next) => {
 // POST - process the information passed from the details form and update the document
 router.post('/:id', (req, res, next) => {
 
-    /*****************
-     * ADD CODE HERE *
-     *****************/
+    // fetching the id of the book which will be updated by the user
     let id = req.params.id
 
     let updatedBook = book({
@@ -109,10 +117,7 @@ router.post('/:id', (req, res, next) => {
 // GET - process the delete by user id
 router.get('/delete/:id', (req, res, next) => {
 
-  /*****************
-   * ADD CODE HERE *
-   *****************/
-
+  // fetching the id of the book which is going to be deleted by the user
   let id = req.params.id;
 
   book.remove({_id: id}, (err) => {
